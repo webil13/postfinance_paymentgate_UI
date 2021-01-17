@@ -1,0 +1,273 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: url("../img/bg-payment.jpg") center/cover;
+  font-family: "Frutiger", Helvetica, sans-serif;
+}
+
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  &:focus::placeholder {
+    color: rgba(0, 0, 0, 0.1);
+  }
+}
+button:focus {
+  outline: none;
+}
+
+@mixin glassmorph {
+  background-color: transparent;
+  backdrop-filter: blur(1.5em);
+  border-radius: 0.3em;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15), -1px -1px 2px #aaa,
+    1px 1px 2px #555;
+}
+
+.logo-header {
+  width: 100vw;
+  height: 8vh;
+  background-color: rgb(250, 250, 250);
+  .logo-link {
+    .logo-img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.main-content {
+  @include glassmorph;
+  min-width: 365px;
+  max-width: 80vw;
+  padding: 2ch 3ch;
+  margin: 3ch auto;
+  display: grid;
+  place-content: center;
+  gap: 3ch;
+
+  .transaction-title {
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+  }
+  .transaction-details {
+    color: #fff;
+    background: linear-gradient(
+      to bottom right,
+      rgba(251, 198, 26, 0.6),
+      rgba(251, 198, 26, 0.2)
+    );
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 1ch 2ch;
+    table {
+      td {
+        padding: 0.5ch;
+      }
+    }
+  }
+  .card-container {
+    .card-container-title {
+      color: #fff;
+      margin: 0 0 2em 0;
+    }
+    .card {
+      transition: transform 0.9s ease-in-out;
+      @include glassmorph;
+      border-radius: 15px;
+      background: linear-gradient(
+        to bottom right,
+        rgba(251, 198, 26, 0.6),
+        rgba(251, 198, 26, 0.2)
+      );
+      position: relative;
+      .back {
+        background-color: rgba(251, 198, 26, 1);
+        width: 100%;
+        height: 100%;
+        .top-info {
+          padding: 0.1em 1.5em;
+          font-weight: lighter;
+          font-size: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .mag-stripe {
+          width: 100%;
+          height: 30px;
+          background-color: #000;
+          margin: 0.1em 0 2em 0;
+        }
+        .signature-field {
+          display: block;
+          width: 180px;
+          height: 30px;
+          margin: 0 0 2em 1em;
+          background: #fff url("../img/signature-field.svg");
+        }
+
+        .card-main {
+          padding: 0 1em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .left {
+            font-size: 0.8em;
+            letter-spacing: 0.1px;
+          }
+          .right {
+            max-width: 50%;
+            img {
+              max-height: 35px;
+              transform: translate(10px, -15px);
+            }
+            .sn {
+              font-size: 0.3em;
+              font-weight: lighter;
+              transform: translate(10px, 0);
+            }
+          }
+        }
+      }
+
+      .front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        @include glassmorph();
+        background: rgba(251, 198, 26, 1);
+        .direct-id {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.5em;
+          transform: translate(-35%, -25%);
+          .direct {
+            color: rgba(251, 198, 26, 1);
+            padding: 0.5ch;
+            background-color: #000;
+            border: 1px solid #000;
+            border-bottom-right-radius: 0.4ch;
+            border-bottom-left-radius: 0.4ch;
+          }
+          .id {
+            padding: 0.5ch;
+            color: #000;
+            border: 1px solid #000;
+            border-bottom-right-radius: 0.4ch;
+            border-bottom-left-radius: 0.4ch;
+          }
+        }
+        .card-logo img {
+          height: 30px;
+          width: auto;
+          margin-left: 5%;
+        }
+        .chip-contactless img {
+          height: 20px;
+          width: auto;
+          margin-left: 10%;
+        }
+        .contactless-icon {
+          transform: scale(1.2);
+        }
+        .card-nr-expiry {
+          margin: 4% 8%;
+          display: flex;
+        }
+        .cardholder-name {
+          margin-left: 8%;
+          font-weight: 100;
+        }
+        .iban-field {
+          margin: 0 0 0 8%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .iban-albel {
+            font-weight: lighter;
+          }
+          .iban-input {
+            width: 100%;
+          }
+        }
+      }
+      .hidden {
+        visibility: hidden;
+      }
+      .animate-in {
+        animation: animateIn 900ms ease-in-out;
+      }
+      @keyframes animateIn {
+        from {
+          opacity: 0;
+          transform: translateY(-1vh);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-out {
+        animation: animateOut 900ms ease-in-out;
+      }
+      @keyframes animateOut {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-1vh);
+        }
+      }
+      .active {
+        border-radius: 5px;
+        border: 2px dashed rgb(126, 4, 4);
+      }
+    }
+  }
+  .action-buttons {
+    margin: 1.5em 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      @include glassmorph;
+      color: #fff;
+      padding: 1em 2em;
+    }
+    .next-btn {
+      background: linear-gradient(
+        to bottom right,
+        rgba(251, 198, 26, 0.6),
+        rgba(251, 198, 26, 0.2)
+      );
+
+      &:hover {
+        background: rgba(251, 198, 26, 1);
+      }
+    }
+    .cancel-btn {
+      &:hover {
+        background: rgb(126, 4, 4);
+      }
+    }
+  }
+}

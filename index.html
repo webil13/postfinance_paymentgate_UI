@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/frutiger-cufonfonts-webfont/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Glassmorph PostFinance</title>
+  </head>
+  <body>
+    <header class="logo-header">
+      <a href="" class="logo-link">
+        <img
+          src="./img/postfinance-logo.png"
+          alt="postfinance logo"
+          class="logo-img"
+      /></a>
+    </header>
+    <main class="main-content">
+      <h1 class="transaction-title">Authorize Transaction</h1>
+      <div class="transaction-details">
+        <table>
+          <tr>
+            <td class="table-heading">Order Number</td>
+            <td>MOIT18365669684536</td>
+          </tr>
+          <tr>
+            <td class="table-heading">Amount</td>
+            <td>CHF 499.95</td>
+          </tr>
+          <tr>
+            <td class="table-heading">Date</td>
+            <td>01.01.2021 01:01:01</td>
+          </tr>
+        </table>
+      </div>
+      <div class="card-container">
+        <h3 class="card-container-title">Please enter your ID number</h3>
+        <div class="card">
+          <div class="back">
+            <div class="top-info">
+              <p>Postfinance, CH-4808 Zofingen, +41 848 888 700</p>
+              <p>www.postfinance.ch</p>
+            </div>
+            <div class="mag-stripe"></div>
+            <div class="signature-field"></div>
+            <div class="card-main">
+              <div class="left">
+                <div class="id-field active">
+                  <label for="id-input" class="id-label">ID:</label>
+                  <input
+                    id="id-input"
+                    type="text"
+                    class="id-input"
+                    placeholder="123 456 789 123"
+                  />
+                </div>
+                <div class="konto-field">
+                  <label for="konto-input" class="konto-label">KONTO:</label>
+                  <input
+                    type="text"
+                    id="konto-input"
+                    class="konto-input"
+                    placeholder="12-345678-9"
+                  />
+                </div>
+              </div>
+              <div class="right">
+                <img src="./img/plus.svg" alt="" class="plus-img" />
+                <p class="sn">GEMALTO SP U1345677H 0747</p>
+              </div>
+            </div>
+          </div>
+          <div class="front">
+            <div class="direct-id">
+              <p class="direct">direct</p>
+              <p class="id">id</p>
+            </div>
+            <div class="card-logo">
+              <img
+                src="./img/postfinance-logo-transparent.png"
+                alt="postfinance logo"
+                class="card-front-logo"
+              />
+            </div>
+            <div class="chip-contactless">
+              <img src="./img/PFCD_chip.png" alt="" class="chip-img" />
+              <img
+                src="./img/contactless-icon.svg"
+                alt="       "
+                class="contactless-icon"
+              />
+            </div>
+            <div class="card-nr-expiry">
+              <input class="card-nr-input" type="text" placeholder="12345678" />
+              <input
+                class="card-expiry-input"
+                type="text"
+                placeholder="01/23"
+              />
+            </div>
+            <p class="cardholder-name">hans-peter postegger</p>
+            <div class="iban-field">
+              <label class="iban-label">iban</label>
+              <input
+                type="text"
+                class="iban-input"
+                placeholder="CH12 3456 7890 1234 5678 9"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <button class="cancel-btn">Cancel</button>
+          <button class="next-btn">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js"
+      integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/field-validation.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
