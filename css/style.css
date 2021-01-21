@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url("../img/bg-payment.jpg") center/cover;
+  background: url("../img/bg-payment.jpg") center/cover no-repeat;
   font-family: "Frutiger", Helvetica, sans-serif;
 }
 
@@ -52,7 +52,7 @@ button:focus {
 }
 
 .logo-header {
-  width: 100vw;
+  width: 100%;
   height: 8vh;
   background-color: #fafafa;
 }
@@ -69,14 +69,13 @@ button:focus {
   border-radius: 0.3em;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15), -1px -1px 2px #aaa, 1px 1px 2px #555;
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15), -1px -1px 2px #aaa, 1px 1px 2px #555;
-  min-width: 365px;
   max-width: 80vw;
-  padding: 2ch 3ch;
-  margin: 3ch auto;
+  padding: 2em 3em;
+  margin: 3% auto;
   display: -ms-grid;
   display: grid;
   place-content: center;
-  gap: 3ch;
+  gap: 0.3em;
 }
 
 .main-content .transaction-title {
@@ -100,7 +99,7 @@ button:focus {
 
 .main-content .card-container .card-container-title {
   color: #fff;
-  margin: 0 0 2em 0;
+  margin: 0.6em 0;
 }
 
 .main-content .card-container .card {

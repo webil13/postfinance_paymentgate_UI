@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url("../img/bg-payment.jpg") center/cover;
+  background: url("../img/bg-payment.jpg") center/cover no-repeat;
   font-family: "Frutiger", Helvetica, sans-serif;
 }
 
@@ -35,7 +35,7 @@ button:focus {
 }
 
 .logo-header {
-  width: 100vw;
+  width: 100%;
   height: 8vh;
   background-color: rgb(250, 250, 250);
   .logo-link {
@@ -48,13 +48,13 @@ button:focus {
 
 .main-content {
   @include glassmorph;
-  min-width: 365px;
+  // min-width: 365px;
   max-width: 80vw;
-  padding: 2ch 3ch;
-  margin: 3ch auto;
+  padding: 2em 3em;
+  margin: 3% auto;
   display: grid;
   place-content: center;
-  gap: 3ch;
+  gap: 0.3em;
 
   .transaction-title {
     margin: 0;
@@ -80,7 +80,7 @@ button:focus {
   .card-container {
     .card-container-title {
       color: #fff;
-      margin: 0 0 2em 0;
+      margin: 0.6em 0;
     }
     .card {
       transition: transform 0.9s ease-in-out;
